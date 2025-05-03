@@ -1,111 +1,42 @@
 <template>
-  <div class="quiz-game">
+  <div class="choice-game">
     <div class="top-right">
       <router-link to="/" class="next-button">回首頁</router-link>
     </div>
 
-    <h1>資訊時光機：問答遊戲</h1>
+    <h1 class="fade-in">資訊時光機：終章抉擇</h1>
 
-    <div v-if="currentQuestion">
-      <h2>{{ currentQuestion.question }}</h2>
-      <div class="options">
-        <button
-          v-for="option in currentQuestion.options"
-          :key="option"
-          @click="checkAnswer(option)"
-        >
-          {{ option }}
-        </button>
-      </div>
+    <p class="intro fade-in-delayed">
+      你穿越了一連串的資訊年代，看見科技如何影響世界。
+      <br />但現在，時光機即將關閉……
+      <br />你，會選擇哪個方向前進？
+    </p>
 
-      <div v-if="answered">
-        <p :class="{ correct: isCorrect, wrong: !isCorrect }">
-          {{ isCorrect ? "答對了！🎉" : "答錯了！😢 正確答案是：" + currentQuestion.answer }}
-        </p>
-        <p v-if="showExplanation" class="explanation">
-          {{ currentQuestion.explanation }}
-        </p>
-      </div>
+    <div class="choice-buttons fade-in-delayed-more">
+      <button @click="goToPast">🔙 回到過去</button>
+      <button @click="goToFuture">🔮 前往未來</button>
     </div>
-
   </div>
 </template>
 
 <script>
 export default {
-  name: "QuizGame",
-  data() {
-    return {
-      questions: [
-        {
-          question: "哪一年第一支 iPhone 發表？",
-          options: ["2005", "2007", "2009", "2011"],
-          answer: "2007",
-          explanation: 'BB Call 是 1990 年代流行的呼叫器，當時還沒有智慧型手機。'
-        },
-        {
-          question: "WWW（全球資訊網）是誰發明的？",
-          options: ["Steve Jobs", "Tim Berners-Lee", "Bill Gates", "Elon Musk"],
-          answer: "Tim Berners-Lee",
-          explanation: 'xxxxxx。'
-        },
-        {
-          question: "Windows 95 是哪一年推出的？",
-          options: ["1993", "1995", "1997", "1999"],
-          answer: "1995",
-          explanation: 'xxxxxxx。'
-        }
-      ],
-      currentQuestion: null,
-      answered: false,
-      isCorrect: false,
-      showExplanation: false,
-    }
-  },
-  created() {
-    this.pickRandomQuestion();
-  },
+  name: 'ChoiceGame',
   methods: {
-    pickRandomQuestion() {
-      const randomIndex = Math.floor(Math.random() * this.questions.length);
-      this.currentQuestion = this.questions[randomIndex];
+    goToPast() {
+      this.$router.push('/past-ending');
     },
-    checkAnswer(selected) {
-      this.answered = true;
-      this.isCorrect = (selected === this.currentQuestion.answer);
-      this.showExplanation = true;
+    goToFuture() {
+      this.$router.push('/future-ending');
     }
   }
-}
+};
 </script>
 
 <style scoped>
-.quiz-game {
+.choice-game {
   text-align: center;
-  padding: 20px;
-}
-
-.options {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* 換行支援 */
-  gap: 1rem; /* 間距 */
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.correct {
-  color: green;
-  margin-top: 20px;
-}
-
-.wrong {
-  color: red;
-  margin-top: 20px;
+  padding: 40px;
 }
 
 .top-right {
@@ -124,5 +55,48 @@ button {
 }
 .next-button:hover {
   background-color: #45a049;
+}
+
+.choice-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+button {
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background: #222;
+  color: white;
+  transition: 0.3s;
+}
+button:hover {
+  background: #444;
+}
+
+/* ✨動畫效果 */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-delayed {
+  opacity: 0;
+  animation: fadeIn 1s ease 0.5s forwards;
+}
+
+.fade-in-delayed-more {
+  opacity: 0;
+  animation: fadeIn 1s ease 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 </style>
