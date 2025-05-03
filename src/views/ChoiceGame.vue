@@ -1,7 +1,7 @@
 <template>
   <div class="quiz-game">
     <div class="top-right">
-      <router-link to="/choice" class="next-button">下一頁 ➜</router-link>
+      <router-link to="/" class="next-button">回首頁</router-link>
     </div>
 
     <h1>資訊時光機：問答遊戲</h1>
