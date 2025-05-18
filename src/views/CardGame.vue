@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="matched-info" v-if="currentDescription">
-        <h3>說明：</h3>
+        <h3>📚 小知識</h3>
         <p>{{ currentDescription }}</p>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="choice-game">
     <div class="top-right">
-      <router-link to="/" class="next-button">回首頁</router-link>
+      <router-link to="/tech-intro" class="next-button">下一頁 ➜</router-link>
     </div>
 
     <h1 class="fade-in">資訊時光機：終章抉擇</h1>
