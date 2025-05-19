@@ -16,7 +16,7 @@
     </div>
 
     <div class="tech-section">
-      <h2>🚀 未來規劃</h2>
+      <h2>🚀 心得 / 學習分享 </h2>
       <ul>
         <li>RWD 響應式設計</li>
         <li>動畫細節優化</li>
