@@ -22,9 +22,13 @@
           </div>
         </div>
       </div>
-      <div class="matched-info" v-if="currentDescription">
+    </div>
+    <!-- 小知識 Modal -->
+    <div v-if="currentDescription" class="modal-overlay" @click="closeModal">
+      <div class="modal-content" @click.stop>
         <h3>📚 小知識</h3>
         <p>{{ currentDescription }}</p>
+        <button @click="closeModal" class="close-button">關閉</button>
       </div>
     </div>
   </div>
@@ -49,6 +53,7 @@ export default {
         description:
           "DOS 作業系統：磁碟作業系統，1980 年代廣泛應用，為圖形化介面興起前的主流系統。",
       },
+      { emoji: "📠", description: "傳真機：1990 年代辦公室的重要通訊工具，傳送文件靠這台！" },
     ];
     // 複製兩次 打亂順序
     let allCards = [...emojis, ...emojis].sort(() => 0.5 - Math.random());
@@ -93,21 +98,32 @@ export default {
         }
       }
     },
+    closeModal() {
+      this.currentDescription = "";
+    }
   },
 };
 </script>
 
 <style scoped>
+body,
+html {
+  overflow: visible;
+}
 .card-container {
   position: relative;
   width: 100%;
   height: 100vh;
   background: url("@/assets/era1990.jpg") no-repeat center center/cover;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 15px;
+  max-width: 90%;
+  margin: 0 auto;
   align-items: center;
-  flex-direction: column;
-  overflow: hidden;
+  /* flex-direction: column; */
+  /* overflow: hidden; */
 }
 .overlay {
   position: absolute;
@@ -126,25 +142,30 @@ export default {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 100px); /* 由這邊控制牌的派列 */
-  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* 由這邊控制牌的派列 */
+  grid-gap: 12px;
   justify-content: center;
-  margin: 30px 0;
+  max-width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .card {
-  width: 100px;
-  height: 100px;
-  background: #222;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  cursor: pointer;
-  color: #fff;
-  font-size: 36px;
-  display: flex;
-  align-items: center;
+  /* width: 100px;
+  height: 100px; */
+  background: #222; 
+  border: 2px solid #ccc; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  color: #fff; 
+  font-size: 36px; 
+  display: flex; 
+  align-items: center; 
   justify-content: center;
-  position: relative;
+  aspect-ratio: 1 / 1; /* 保持正方形 */
+  max-width: 100px;
+  width: 100%;
+  /* position: relative; */
   z-index: 2;
 }
 
@@ -154,8 +175,10 @@ export default {
   right: 20px;
 }
 
-h1, h3, p {
-  color:white;
+h1,
+h3,
+p {
+  color: white;
 }
 
 .next-button {
@@ -181,4 +204,53 @@ h1, h3, p {
   padding: 20px;
   border-radius: 8px;
 }
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 8px;
+  }
+  .card {
+    /* width: 80px;
+    height: 80px; */
+    font-size: 24px;
+    max-width: 80px;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: grey;
+  color: #333;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.close-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #0cf;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background: #09a;
+}
+
 </style>
