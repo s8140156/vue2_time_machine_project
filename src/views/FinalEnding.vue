@@ -4,11 +4,13 @@
     <p class="summary">
       希望這段穿梭過去與未來的旅程，帶給你滿滿的知識與回憶！  
       未來的世界正在等著我們一起探索！
+      <br>
+      謝謝大家!
     </p>
 
     <div class="action-buttons">
       <router-link to="/" class="restart-button">重新開始旅程 ⟳</router-link>
-      <a href="https://chat.openai.com/" target="_blank" class="future-button">前往 AI 時代 ➜</a>
+      <!-- <a href="https://chat.openai.com/" target="_blank" class="future-button">前往 AI 時代 ➜</a> -->
     </div>
   </div>
 </template>
@@ -17,13 +19,13 @@
 .final-ending-container {
   text-align: center;
   padding: 60px 20px;
-  background: linear-gradient(to right, #141e30, #243b55);
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: #fff;
   min-height: 100vh;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 36px;
   margin-bottom: 30px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }

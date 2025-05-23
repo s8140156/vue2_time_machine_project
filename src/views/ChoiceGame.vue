@@ -68,17 +68,17 @@ export default {
 }
 
 .next-button {
-  background-color: #FFD700;
-  color: #000;
-  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  padding: 6px 12px;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 2;
 }
 .next-button:hover {
-  background-color: #e6c200;
-  transform: scale(1.05);
+  background-color: #45a049;
 }
 
 .choice-buttons {
