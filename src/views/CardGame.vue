@@ -112,14 +112,14 @@ html {
 }
 .card-container {
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   height: 100vh;
   background: url("@/assets/era1990.jpg") no-repeat center center/cover;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  max-width: 90%;
+  /* max-width: 90%; */
   margin: 0 auto;
   align-items: center;
   /* flex-direction: column; */

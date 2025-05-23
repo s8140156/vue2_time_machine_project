@@ -48,14 +48,14 @@
 }
 
 .star-wars-text h1 {
-  font-size: 88px;
+  font-size: 58px;
   font-weight: bold;
   letter-spacing: 2px; /* 字距拉大更有氣勢 */
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* X偏移, Y偏移, 模糊半徑, 顏色 */
 }
 
 .star-wars-text p {
-  font-size: 36px;
+  font-size: 30px;
   margin-top: 16px;
   line-height: 1.6;
   color: #ffff99; /* 比標題稍微柔和的亮黃 */
