@@ -18,9 +18,12 @@
     <div class="tech-section">
       <h2>🚀 心得 / 學習分享 </h2>
       <ul>
-        <li>RWD 響應式設計</li>
-        <li>動畫細節優化</li>
-        <li>貪食蛇小遊戲加入</li>
+        <li>專案架構設計</li>
+        <li>Vue2語法與應用</li>
+        <li>翻牌、貪食蛇遊戲邏輯</li>
+        <li>RWD響應式設計 ➡️ 痛苦</li>
+        <li></li>
+        <li>CSS元件化改善</li>
       </ul>
     </div>
 
