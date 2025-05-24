@@ -11,7 +11,7 @@
         <li>Vue 2 + Vue Router</li>
         <li>CSS3 動畫 (Star Wars 字幕效果)</li>
         <li>Component 模組化開發</li>
-        <li>Git 版本控制 & GitHub 上傳</li>
+        <!-- <li>Git 版本控制 & GitHub 上傳</li> -->
       </ul>
     </div>
 

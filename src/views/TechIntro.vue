@@ -2,7 +2,7 @@
   <div class="tech-container">
     <h1>技術報告 - 專案簡介</h1>
     <p>
-      本專案以「資訊時光機」為主題，結合 Vue 2、Vue Router 及 CSS 動畫設計，
+      本專案以「資訊時光機」為主題，結合 Vue、Vue Router 及 CSS 動畫設計，
       打造出一個充滿互動性的網頁遊戲體驗。
     </p>
     <p>
